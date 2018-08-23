@@ -3317,3 +3317,6 @@ input, select, textarea {
 			font-size: 200%;
 		}
 
+		.image-text{
+			text-align: center;
+		}
