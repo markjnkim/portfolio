@@ -3320,3 +3320,6 @@ input, select, textarea {
 		.image-text{
 			text-align: center;
 		}
+#header{
+	padding: 0px;
+}
