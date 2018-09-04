@@ -5,7 +5,7 @@ module.exports = function (app) {
   app.get('/blog', (req, res) => res.send('blog'))
   app.get('/contact', (req, res) => res.send('contact'))
   app.get('/resume', (req, res) => res.send('resume'))
-  app.get('/generic', (req, res) => res.send('generic'))
+  app.get('/index', (req, res) => res.send('index'))
   app.get('/elements', (req, res) => res.send('elements'))
   app.get('/', (req, res) => res.send('index'))
 
