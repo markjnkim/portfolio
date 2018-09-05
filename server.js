@@ -10,7 +10,7 @@ const app = express();
 // Configure middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static("assets"));
+app.use('/assets', express.static(__dirname + '/assets'));
 
 // Handlebars
 // Set Handlebars.
@@ -29,7 +29,15 @@ app.use(express.static("assets"));
 
 // Requiring our routes
 // require("./routes/html-routes.js")(app);
-require("./routes/rest-routes")(app);
+require("./routes/html-routes")(app);
+// app.get('/index', (req, res) => res.send('index'))
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, './views', 'index.html'));
+// });
+
+// app.get('/resume', (res, req) => { 
+//   res.sendFile(path.join(__dirname, './views', 'resume.html'));
+// });
 
 
 // Start the server
