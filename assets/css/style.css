@@ -92,14 +92,13 @@
 
 .left-margin {
   margin: 0px;
-  display: inline-block;
+  display: inline;
   font-weight: bold;
-  color: red;
 }
 
 .right-margin {
   margin: 0px;
-  display: inline-block;
+  display: inline;
   float: right;
 }
 
