@@ -13,9 +13,10 @@ $(document).on('click', '#make-new', () => {
       created: Date.now()
     }
   }).then(data => {
-    console.log(data)
-    $('#message').val('')
-    $('#email').val('')
-    $('#name').val('')
+    console.log(data);
+    $('#message').val('');
+    $('#email').val('');
+    $('#name').val('');
+    alert("Thank you for your message!");
   })
 })
