@@ -7,33 +7,21 @@ var Schema = mongoose.Schema;
 // This is similar to a Sequelize model
 var MessageSchema = new Schema({
   // `title` is required and of type String
-  subject: {
+  message: {
     type: String,
-    required: true,
-    unique: true
+    required: true
+   
   },
-  body: {
+  email: {
     type: String,
     required: true
   },
-  firstName: {
-    type: String,
-    require: true
-  },
-  lastName: {
+  name: {
     type: String,
     require: true
   }
-
 });
 
-// Custom method `isSaved`
-MessageSchema.methods.isSaved = function(val) {
-    // changes saved value
-    this.saved = val;
-    // Return the new saved
-    return this.saved;
-  };
 
 // This creates our model from the above schema, using mongoose's model method
 var Message = mongoose.model("Message", MessageSchema);

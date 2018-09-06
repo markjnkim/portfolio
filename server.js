@@ -15,30 +15,20 @@ app.use('/assets', express.static(__dirname + '/assets'));
 // Handlebars
 // Set Handlebars.
 // const exphbs = require("express-handlebars");
-
 // app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 // app.set("view engine", "handlebars");
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-// const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/resume_messages";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/resume_messages";
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
-// mongoose.Promise = Promise;
-// mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // Requiring our routes
-// require("./routes/html-routes.js")(app);
 require("./routes/html-routes")(app);
-// app.get('/index', (req, res) => res.send('index'))
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, './views', 'index.html'));
-// });
-
-// app.get('/resume', (res, req) => { 
-//   res.sendFile(path.join(__dirname, './views', 'resume.html'));
-// });
-
+require("./routes/api-routes")(app);
 
 // Start the server
 app.listen(PORT, () => console.log("App running on port " + PORT + "!"));
